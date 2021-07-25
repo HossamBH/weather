@@ -61,6 +61,13 @@ const postData = async(url = '', data = {})=>{
 const updateUI =  async()=>{
     const req = await fetch('/getAllData');
     try{
-        document.getElementById('date').innerHTML = 
-    } 
+        const displayData = await req.json();
+        document.getElementById('date').innerHTML = displayData.date;
+        document.getElementById('temp').innerHTML = displayData.temp;
+        document.getElementById('content').innerHTML = displayData.content;
+        console.log(document.getElementById('content').innerHTML);
+    }
+    catch(error){
+        console.log("error", error);
+    }
 }
