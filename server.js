@@ -19,11 +19,29 @@ app.use(express.static('website'));
 
 // Setup Server
 const port = 3000;
-
-// TODO-Spin up the server
 const server = app.listen(port, listening);
 
 function listening(){
     console.log('server running');
     console.log(`running on localhost: ${port}`);
+}
+
+// get all data to the client-side
+app.get('/getAllData', getData);
+
+function getData(req,res){
+    res.send(projectData);
+}
+
+// add data to projectData variable
+app.post('/addData', addData);
+
+function addData(req, res){
+    console.log(req.body);
+    result = {
+        date: req.body.date,
+        temp: req.body.temp,
+        content: req.body.content
+    };
+    projectData = result;
 }
