@@ -4,7 +4,7 @@
 let d = new Date();
 let newDate = (d.getMonth() + 1) + '/'+ d.getDate()+'/'+ d.getFullYear();
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = ',us&appid=f88d2894526d19922bbdcdf6882b9a07&units=metric';
+const apiKey = ',us&appid=f88d2894526d19922bbdcdf6882b9a07&units=metric';
 // zipCode "94040"
 // get the data after click on generate
 document.getElementById('generate').addEventListener('click', getFormData);
